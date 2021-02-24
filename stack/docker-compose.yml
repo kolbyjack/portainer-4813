@@ -1,0 +1,13 @@
+services:
+  busybox:
+    image: busybox:latest
+    secrets:
+      - parent_directory_secret_file
+      - current_directory_secret_file
+      - child_directory_secret_file
+
+secrets:
+  parent_directory_secret_file: ../secret_file.txt
+  current_directory_secret_file: ./secret_file.txt
+  child_directory_secret_file: child/secret_file.txt
+
