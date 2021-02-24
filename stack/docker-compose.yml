@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   busybox:
     image: busybox:latest
@@ -7,7 +9,10 @@ services:
       - child_directory_secret_file
 
 secrets:
-  parent_directory_secret_file: ../secret_file.txt
-  current_directory_secret_file: ./secret_file.txt
-  child_directory_secret_file: child/secret_file.txt
+  parent_directory_secret_file:
+      file: ../secret_file.txt
+  current_directory_secret_file:
+      file: ./secret_file.txt
+  child_directory_secret_file:
+      file: child/secret_file.txt
 
